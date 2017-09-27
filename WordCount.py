@@ -149,11 +149,11 @@ class LatexWordCountCommand(sublime_plugin.TextCommand):
             total_chars += rtotal
 
         sublime.message_dialog('''\
-Word count for %s
+Word count for {scope}
 
-Words:\t\t\t\t\t\t%d
-Characters (ignoring whitespace):\t%d
-Characters (with whitespace):\t%d
-Lines:\t\t\t\t\t\t%d
+Words: {words:>24}
+Characters: {chars:>17} (ignoring whitespace)
+Characters: {total_chars:>17} (with whitespace)
+Lines: {lines:>27}
 
-%s''' % (scope, words, chars, total_chars, lines, language))
+{language}'''.format(scope=scope, words=words, chars=chars, total_chars=total_chars, lines=lines, language=language))
