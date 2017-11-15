@@ -130,10 +130,15 @@ class LatexWordCountCommand(sublime_plugin.TextCommand):
             scope = "entire file"
 
         # find any custom word counters
-        language = find_language(self.view.settings().get("syntax")).group(1)
-        wordcount_fn = custom_wordcounters.get(language, False)
-        if wordcount_fn:
-            language = "Using custom word counting for " + language
+        language = self.view.settings().get("syntax")
+        matches = find_language(language)
+
+        if matches:
+            language = matches.group(1)
+            wordcount_fn = custom_wordcounters.get(language, False)
+
+            if wordcount_fn:
+                language = "Using custom word counting for " + language
         else:
             language = "No custom support for " + \
                 language + " syntax, treating file as plain text"
