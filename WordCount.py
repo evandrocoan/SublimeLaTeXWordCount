@@ -135,7 +135,7 @@ class LatexWordCountCommand(sublime_plugin.TextCommand):
 
         if matches:
             language = matches.group(1)
-            wordcount_fn = custom_wordcounters.get(language, False)
+            wordcount_fn = custom_wordcounters.get(language, basic_wordcount)
 
             if wordcount_fn:
                 language = "Using custom word counting for " + language
