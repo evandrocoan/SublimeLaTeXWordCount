@@ -10,6 +10,29 @@ Go to `Tools -> Word Count` to display word, character and line counts for the c
 
 The default key binding is `Control + Shift + C`
 
+
+## Installation
+
+### By Package Control
+
+1. Download & Install `Sublime Text 3` (https://www.sublimetext.com/3)
+1. Go to the menu `Tools -> Install Package Control`, then,
+   wait few seconds until the `Package Control` installation finishes
+1. Go to the menu `Preferences -> Package Control`
+1. Type `Package Control Add Channel` on the opened quick panel and press <kbd>Enter</kbd>
+1. Then, input the following address and press <kbd>Enter</kbd>
+   ```
+   https://raw.githubusercontent.com/evandrocoan/StudioChannel/master/channel.json
+   ```
+1. Now, go again to the menu `Preferences -> Package Control`
+1. This time type `Package Control Install Package` on the opened quick panel and press <kbd>Enter</kbd>
+1. Then, search for `LaTeXWordCount` and press <kbd>Enter</kbd>
+
+See also:
+1. [ITE - Integrated Toolset Environment](https://github.com/evandrocoan/ITE)
+1. [Package control docs](https://packagecontrol.io/docs/usage) for details.
+
+
 ### LaTeX support
 
 The main purpose of this plugin was to support reliable word counts for files with LaTeX markup. The plugin ignores the preamble, abstract, formulas, captions, and supports excluding headers, footnotes and appendices. Have a look at the available config options in `Preferences -> Package Settings -> LaTeX Word Count` to customise what gets counted.
